@@ -5,6 +5,14 @@
   <h1>MYBackpack</h1>
   <p><strong>it's your Backpack</strong></p>
   <p>A multi-tier backpack plugin for Spigot 1.21.4. Craft, carry, and organize your items with style.</p>
+  <p>
+    <a href="https://modrinth.com/plugin/mybackpack">
+      <img src="https://img.shields.io/badge/Download%20on-Modrinth-%2300d875?style=for-the-badge&logo=modrinth" alt="Download on Modrinth">
+    </a>
+    <a href="https://github.com/yossef1st/MYBackpack">
+      <img src="https://img.shields.io/badge/Source%20Code-GitHub-%23121011?style=for-the-badge&logo=github" alt="Source Code on GitHub">
+    </a>
+  </p>
 </div>
 
 ## Features
