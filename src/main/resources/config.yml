@@ -1,0 +1,113 @@
+# ╔══════════════════════════════════════════════════╗
+# ║          MY Backpack - إعدادات البلاجن           ║
+# ║    صنع بواسطة YOSSEF_1ST باستخدام opencode       ║
+# ╚══════════════════════════════════════════════════╝
+
+# اللغة: ar (العربية) | en (English)
+lang: ar
+
+backpacks:
+
+  # ┌─────────────────────────────────┐
+  # │       الحقيبة الصغيرة          │
+  # └─────────────────────────────────┘
+  small:
+    name: "&6&lSmall Backpack"
+    lore:
+      - "&7حقيبة صغيرة محمولة"
+      - "&7كليك يمين لفتح"
+      - "&7Shift + كليك يمين لتفعيل الجمع التلقائي"
+
+    # الأرقام المسموح بها: 9 | 18 | 27 | 36 | 45 | 54
+    size: 18
+
+    head-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODM1MWU1MDU5ODk4MzhlMjcyODdlN2FmYmM3Zjk3ZTc5NmNhYjVmMzU5OGE3NjE2MGMxMzFjOTQwZDBjNSJ9fX0="
+
+    recipe:
+      enabled: true
+      shape:
+        - "LLL"
+        - "LCL"
+        - "ILI"
+      ingredients:
+        L: LEATHER
+        C: CHEST
+        I: IRON_BLOCK
+
+
+  # ┌─────────────────────────────────┐
+  # │       الحقيبة المتوسطة         │
+  # └─────────────────────────────────┘
+  medium:
+    name: "&5&lMedium Backpack"
+    lore:
+      - "&7حقيبة متوسطة محمولة"
+      - "&7كليك يمين لفتح"
+      - "&7Shift + كليك يمين لتفعيل الجمع التلقائي"
+
+    # الأرقام المسموح بها: 9 | 18 | 27 | 36 | 45 | 54
+    size: 27
+
+    head-texture: "aHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hM2MxNTNjMzkxYzM0ZTJkMzI4YTYwODM5ZTY4M2E5ZjgyYWQzMDQ4Mjk5ZDhiYzZhMzllNmY5MTVjYzVh"
+
+    recipe:
+      enabled: true
+      shape:
+        - "DDD"
+        - "DBD"
+        - "DDD"
+      ingredients:
+        D: DIAMOND
+        B: SMALL_BACKPACK   # الحقيبة الصغيرة
+
+
+  # ┌─────────────────────────────────┐
+  # │        الحقيبة الكبيرة         │
+  # └─────────────────────────────────┘
+  large:
+    name: "&4&lLarge Backpack"
+    lore:
+      - "&7حقيبة كبيرة محمولة"
+      - "&7كليك يمين لفتح"
+      - "&7Shift + كليك يمين لتفعيل الجمع التلقائي"
+
+    # الأرقام المسموح بها: 9 | 18 | 27 | 36 | 45 | 54
+    size: 54
+
+    head-texture: "aHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS82NTM2YWQ5NzhlMWNlNTA1MGY0M2I3YTZiMzg1OWViNDk0MDZiNGYxMDQzODAyYTcxMWNkYzgwYzA5MGMzNWQ="
+
+    recipe:
+      enabled: true
+      shape:
+        - "NNN"
+        - "NXN"
+        - "NNN"
+      ingredients:
+        N: NETHERITE_INGOT
+        X: MEDIUM_BACKPACK  # الحقيبة المتوسطة
+
+
+  # ┌─────────────────────────────────┐
+  # │       حقيبة الإندر             │
+  # │      Ender Backpack             │
+  # └─────────────────────────────────┘
+  ender:
+    name: "&d&lEnder Backpack"
+    lore:
+      - "&7حقيبة الإندر — نفس مخزون Ender Chest"
+      - "&7كليك يمين لفتح"
+
+    # شكل الرأس — انسخ الـ texture من minecraft-heads.com
+    head-texture: "aHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kZGNjMTg5NjMzYzc4OWNiNmQ1ZTc4ZDEzYTUwNDNiMjZlN2I0MGNkYjdjZmM0ZTIzYWEyMjc5NTc0OTY3YjQ="
+
+    recipe:
+      enabled: true
+      # E = Ender Eye | C = Ender Chest | O = Obsidian
+      shape:
+        - "EOE"
+        - "OCO"
+        - "EOE"
+      ingredients:
+        E: ENDER_EYE
+        C: ENDER_CHEST
+        O: OBSIDIAN

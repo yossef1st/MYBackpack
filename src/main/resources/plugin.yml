@@ -1,0 +1,22 @@
+name: MYBackpack
+version: '2.0'
+main: me.kodysimpson.backpack.Backpack
+api-version: '1.21'
+description: "MYBackpack - Multi-tier backpack plugin | صنع بواسطة YOSSEF_1ST باستخدام opencode"
+
+commands:
+  backpack:
+    description: "MYBackpack main command"
+    usage: "/backpack give <player> <small|medium|large|ender> | /backpack reload"
+    permission: backpack.admin
+
+permissions:
+  backpack.admin:
+    description: "Allows using /backpack commands"
+    default: op
+  backpack.use:
+    description: "Allows using backpacks"
+    default: true
+  backpack.reload:
+    description: "Allows reloading the config"
+    default: op
