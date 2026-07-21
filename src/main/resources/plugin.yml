@@ -1,5 +1,5 @@
 name: MYBackpack
-version: '2.0'
+version: '3.0'
 main: me.kodysimpson.backpack.Backpack
 api-version: '1.21'
 description: "MYBackpack - Multi-tier backpack plugin | صنع بواسطة YOSSEF_1ST باستخدام opencode"

@@ -15,6 +15,7 @@ public enum Lang {
     AUTO_COLLECT_ENABLED("&6التجميع التلقائي: &aمفعل", "&6Auto-collect: &aEnabled"),
     AUTO_COLLECT_DISABLED("&6التجميع التلقائي: &cمعطل", "&6Auto-collect: &cDisabled"),
     COLLECTED("&7» &6تم جمع العنصر في الحقيبة!", "&7» &6Item collected into backpack!"),
+    CANNOT_PLACE_BACKPACK("&cلا يمكنك وضع حقيبة داخل حقيبة!", "&cYou cannot put a backpack inside a backpack!"),
     PLUGIN_ENABLED("&aMYBackpack v{ver} - تم التفعيل بواسطة YOSSEF_1ST باستخدام opencode", "&aMYBackpack v{ver} - Enabled by YOSSEF_1ST using opencode"),
     PLUGIN_DISABLED("&cMYBackpack - تم التعطيل", "&cMYBackpack - Disabled");
 

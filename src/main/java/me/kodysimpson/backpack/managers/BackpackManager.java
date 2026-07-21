@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
@@ -28,7 +29,16 @@ public class BackpackManager {
     private final NamespacedKey backpackContentsKey;
     private final NamespacedKey backpackAutoCollectionKey;
     private final NamespacedKey backpackTierKey;
-    private final Map<Inventory, ItemStack> openBackpacks;
+    private final Map<Inventory, BackpackSession> openBackpacks;
+
+    public static final class BackpackSession {
+        public final Player player;
+        public final BackpackTier tier;
+        public BackpackSession(Player player, BackpackTier tier) {
+            this.player = player;
+            this.tier = tier;
+        }
+    }
 
     // الأسماء الخاصة في الكونفيج للحقائب كمكوّن في الوصفة
     private static final Map<String, BackpackTier> CUSTOM_INGREDIENT_NAMES = new HashMap<>();
@@ -291,12 +301,49 @@ public class BackpackManager {
         return inventory;
     }
 
-    public void trackOpenInventory(Inventory inventory, ItemStack item) {
-        openBackpacks.put(inventory, item);
+    public void trackOpenInventory(Inventory inventory, Player player, BackpackTier tier) {
+        openBackpacks.put(inventory, new BackpackSession(player, tier));
     }
 
-    public ItemStack getTrackedItem(Inventory inventory) {
+    public BackpackSession getOpenSession(Inventory inventory) {
         return openBackpacks.remove(inventory);
+    }
+
+    public boolean isTrackedInventory(Inventory inventory) {
+        return openBackpacks.containsKey(inventory);
+    }
+
+    public ItemStack findBackpackInInventory(Player player, BackpackTier tier) {
+        ItemStack cursor = player.getItemOnCursor();
+        if (cursor != null && cursor.getType() == Material.PLAYER_HEAD && isBackpack(cursor)) {
+            String t = cursor.getItemMeta().getPersistentDataContainer()
+                    .get(backpackTierKey, PersistentDataType.STRING);
+            if (tier.getConfigKey().equals(t)) return cursor;
+        }
+
+        ItemStack mainHand = player.getInventory().getItemInMainHand();
+        if (mainHand != null && mainHand.getType() == Material.PLAYER_HEAD && isBackpack(mainHand)) {
+            String t = mainHand.getItemMeta().getPersistentDataContainer()
+                    .get(backpackTierKey, PersistentDataType.STRING);
+            if (tier.getConfigKey().equals(t)) return mainHand;
+        }
+
+        ItemStack offHand = player.getInventory().getItemInOffHand();
+        if (offHand != null && offHand.getType() == Material.PLAYER_HEAD && isBackpack(offHand)) {
+            String t = offHand.getItemMeta().getPersistentDataContainer()
+                    .get(backpackTierKey, PersistentDataType.STRING);
+            if (tier.getConfigKey().equals(t)) return offHand;
+        }
+
+        for (ItemStack item : player.getInventory().getContents()) {
+            if (item != null && item.getType() == Material.PLAYER_HEAD && isBackpack(item)) {
+                String t = item.getItemMeta().getPersistentDataContainer()
+                        .get(backpackTierKey, PersistentDataType.STRING);
+                if (tier.getConfigKey().equals(t)) return item;
+            }
+        }
+
+        return null;
     }
 
     public void saveBackpackContents(Inventory inventory, ItemStack backpack) {
