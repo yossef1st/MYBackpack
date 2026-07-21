@@ -4,7 +4,7 @@
   <img src="images/icon.png" alt="MYBackpack Icon" width="64" height="64">
   <h1>MYBackpack</h1>
   <p><strong>it's your Backpack</strong></p>
-  <p>A multi-tier backpack plugin for Spigot 1.21.4. Craft, carry, and organize your items with style.</p>
+  <p>A multi-tier backpack plugin for Spigot 1.21.4–26.2. Craft, carry, and organize your items with style.</p>
   <p>
     <a href="https://modrinth.com/plugin/mybackpack">
       <img src="https://img.shields.io/badge/Download%20on-Modrinth-%2300d875?style=for-the-badge&logo=modrinth" alt="Download on Modrinth">
