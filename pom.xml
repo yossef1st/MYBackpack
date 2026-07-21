@@ -6,7 +6,7 @@
 
     <groupId>me.kodysimpson</groupId>
     <artifactId>backpack</artifactId>
-    <version>3.0</version>
+    <version>2.1</version>
     <packaging>jar</packaging>
 
     <name>backpack</name>
